@@ -5,12 +5,6 @@ echo "Kali In A Nutshell"
 echo
 echo "  | Creating /home/Krdtools directory ..."
 echo
-mkdir /home/KrdTools
-echo
-echo "  | Adding /home/Krdtools directory to PATH ..."
-echo
-export PATH=$PATH:/home/KrdTools
-echo
 echo "  Red Wifi"
 echo
 echo "  | Adding WiFuck ..."
