@@ -11,10 +11,15 @@ echo " adding ALIAS "
 sleep 1
 echo
 alias ls='ls --color=auto'
+echo "ls = ls --color=auto"
 alias ip='ip --color=auto'
+echo "ip= ip --color=auto"
 alias grep='grep --color=auto'
+echo "grep = grep --color=auto"
 alias diff='diff --color=auto'
+echo "diff = diff --color=auto"
 alias lla='ls -la'
+echo "lla = ls -la"
 
 #DEPS
 
@@ -61,6 +66,9 @@ sleep 1
 echo
 chmod u+x tools/setup-wifuck-rpi.sh
 ./tools/setup-wifuck-rpi.sh
+sleep Blue tools
+echo
+echo "  "
 echo
 echo "  | Adding CryptSIS-rebirth ..."
 sleep 1
