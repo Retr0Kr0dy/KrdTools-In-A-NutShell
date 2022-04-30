@@ -20,6 +20,7 @@ alias lla='ls -la'
 
 echo " adding DEPS "
 sleep 1
+echo
 echo "  | python3"
 sleep 1
 echo
