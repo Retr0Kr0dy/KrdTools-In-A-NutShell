@@ -18,11 +18,8 @@ alias lla='ls -la'
 
 #DEPS
 
-echo
 echo " adding DEPS "
 sleep 1
-echo
-echo
 echo "  | python3"
 sleep 1
 echo
@@ -85,3 +82,6 @@ sleep 1
 echo
 chmod u+x tools/setup-cryptsis-rebirth.sh
 ./tools/setup-cryptsis-rebirth.sh
+echo
+echo
+echo " COMPLETE !!!!!"
