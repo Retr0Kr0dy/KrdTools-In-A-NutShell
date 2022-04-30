@@ -37,13 +37,6 @@ sleep 1
 echo
 apt install netdiscover -y
 echo
-echo "  | vs-code"
-sleep 1
-echo
-curl https://az764295.vo.msecnd.net/stable/dfd34e8260c270da74b5c2d86d61aee4b6d56977/code_1.66.2-1649664567_amd64.deb >> vscode.deb
-apt install ./vscode.deb -y
-echo
-
 
 #TOOLS
 
