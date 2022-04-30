@@ -66,9 +66,9 @@ sleep 1
 echo
 chmod u+x tools/setup-wifuck-rpi.sh
 ./tools/setup-wifuck-rpi.sh
-sleep Blue tools
+sleep 1
 echo
-echo "  "
+echo "  Blue tools"
 echo
 echo "  | Adding CryptSIS-rebirth ..."
 sleep 1
