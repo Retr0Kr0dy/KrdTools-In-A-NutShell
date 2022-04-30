@@ -71,17 +71,17 @@ echo
 echo "  | Adding WiFuck ..."
 sleep 1
 echo
-chmod u+x setup-wifuck.sh
-./setup-wifuck.sh
+chmod u+x tools/setup-wifuck.sh
+./tools/setup-wifuck.sh
 echo
 echo "  | Adding WiFuck-rpi ..."
 sleep 1
 echo
-chmod u+x setup-wifuck-rpi.sh
-./setup-wifuck-rpi.sh
+chmod u+x tools/setup-wifuck-rpi.sh
+./tools/setup-wifuck-rpi.sh
 echo
 echo "  | Adding CryptSIS-rebirth ..."
 sleep 1
 echo
-chmod u+x setup-cryptsis-rebirth.sh
-./setup-cryptsis-rebirth.sh
+chmod u+x tools/setup-cryptsis-rebirth.sh
+./tools/setup-cryptsis-rebirth.sh
