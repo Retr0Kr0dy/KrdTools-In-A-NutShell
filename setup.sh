@@ -135,6 +135,7 @@ while [ $x -le 5 ] ; do
         echo
         printf "${GREEN}Blue tools"
         echo
+        echo
         sleep 1
         printf "${L_GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
         sleep 1
