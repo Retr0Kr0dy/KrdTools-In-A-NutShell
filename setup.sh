@@ -31,14 +31,14 @@ while [ $x -le 5 ] ; do
         echo "  | python3"
         sleep 1
         echo
-        apt install python -y
+        apt install python3 -y
         choice=$(echo $choice | sed 's/\<python3\>//g')
 
     elif [[ $choice =~ "python3-pip" ]]; then
         echo "  | python3-pip"
         sleep 1
         echo
-        apt install pip -y
+        apt install python3-pip -y
         choice=$(echo $choice | sed 's/\<python3-pip\>//g')
 
     elif [[ $choice =~ "netdiscover" ]]; then
