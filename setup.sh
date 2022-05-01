@@ -38,7 +38,7 @@ while [ $x -le 5 ] ; do
     #DEPS
 
     if [[ $choice =~ "python3" ]]; then
-        printf "${BLUE}  | python3{NC}"
+        printf "${BLUE}  | python3${NC}"
         sleep 1
         echo
         apt install python3 -y
@@ -102,25 +102,26 @@ while [ $x -le 5 ] ; do
     #TOOLS
 
     elif [[ $choice =~ "Tools" ]]; then
+        echo
         printf "${GREEN} adding TOOLS" 
         sleep 1
-        printf "${GREEN}  | Using /bin/..."
+        printf "${L_GREEN}  | Using /bin/..."
         sleep 1
         echo "  Red Wifi"
         sleep 1
-        printf "${GREEN}  | Adding WiFuck ..."
+        printf "${GREEN}  | Adding WiFuck ...${L_PURPLE}"
         sleep 1
         echo
         chmod u+x tools/setup-wifuck.sh
         ./tools/setup-wifuck.sh
-        printf "${GREEN}  | Adding WiFuck-rpi ..."
+        printf "${GREEN}  | Adding WiFuck-rpi ...${L_PURPLE}"
         sleep 1
         echo
         chmod u+x tools/setup-wifuck-rpi.sh
         ./tools/setup-wifuck-rpi.sh
         printf "${GREEN}  Blue tools"
         sleep 1
-        printf "${GREEN}  | Adding CryptSIS-rebirth ..."
+        printf "${L_GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
         sleep 1
         echo
         chmod u+x tools/setup-cryptsis-rebirth.sh
@@ -130,7 +131,11 @@ while [ $x -le 5 ] ; do
     else
         x=$(( $x + 10 ))
         echo
-        printf "${PURPLE}  COMPLETED !!!"
+        printf "${RED}  COMPLETED !!!"
+        echo
+        printf "${RED}  COMPLETED !!!"
+        echo
+        printf "${RED}  COMPLETED !!!"
 
     fi
 done
