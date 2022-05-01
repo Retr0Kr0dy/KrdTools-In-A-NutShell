@@ -32,21 +32,21 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         apt install python3 -y
-        choice=$(echo $choice | sed 's/\<Python3\>//g')
+        choice=$(echo $choice | sed 's/\<python3\>//g')
 
     elif [[ $choice =~ "python3-pip" ]]; then
         echo "  | python3-pip"
         sleep 1
         echo
         apt install python3-pip -y
-        choice=$(echo $choice | sed 's/\<Python3-pip\>//g')
+        choice=$(echo $choice | sed 's/\<python3-pip\>//g')
 
     elif [[ $choice =~ "netdiscover" ]]; then
         echo "  | netdiscover"
         sleep 1
         echo
         apt install netdiscover -y
-        choice=$(echo $choice | sed 's/\<Netdiscover\>//g')
+        choice=$(echo $choice | sed 's/\<netdiscover\>//g')
 
     elif [[ $choice =~ "vs-code" ]]; then
         echo "  | vs-code"
@@ -54,21 +54,21 @@ while [ $x -le 5 ] ; do
         echo
         curl https://az764295.vo.msecnd.net/stable/dfd34e8260c270da74b5c2d86d61aee4b6d56977/code_1.66.2-1649664567_amd64.deb >> vscode.deb
         apt install ./vscode.deb -y
-        choice=$(echo $choice | sed 's/\<Vs-code\>//g')
+        choice=$(echo $choice | sed 's/\<vs-code\>//g')
 
     elif [[ $choice =~ "vagrant" ]]; then
         echo "  | vagrant"
         sleep 1
         echo
         apt install vagrant -y
-        choice=$(echo $choice | sed 's/\<Vagrant\>//g')
+        choice=$(echo $choice | sed 's/\<vagrant\>//g')
 
     elif [[ $choice =~ "docker" ]]; then
         echo "  | docker"
         sleep 1
         echo
         apt install docker -y
-        choice=$(echo $choice | sed 's/\<Docker\>//g')
+        choice=$(echo $choice | sed 's/\<docker\>//g')
     
     #ALIAS
     
