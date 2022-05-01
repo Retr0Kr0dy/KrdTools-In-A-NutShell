@@ -27,28 +27,28 @@ while [ $x -le 5 ] ; do
     
     #DEPS
 
-    if [[ $choice =~ "Python3" ]]; then
+    if [[ $choice =~ "python3" ]]; then
         echo "  | python3"
         sleep 1
         echo
         apt install python3 -y
         choice=$(echo $choice | sed 's/\<Python3\>//g')
 
-    elif [[ $choice =~ "Python3-pip" ]]; then
+    elif [[ $choice =~ "python3-pip" ]]; then
         echo "  | python3-pip"
         sleep 1
         echo
         apt install python3-pip -y
         choice=$(echo $choice | sed 's/\<Python3-pip\>//g')
 
-    elif [[ $choice =~ "Netdiscover" ]]; then
+    elif [[ $choice =~ "netdiscover" ]]; then
         echo "  | netdiscover"
         sleep 1
         echo
         apt install netdiscover -y
         choice=$(echo $choice | sed 's/\<Netdiscover\>//g')
 
-    elif [[ $choice =~ "Vs-code" ]]; then
+    elif [[ $choice =~ "vs-code" ]]; then
         echo "  | vs-code"
         sleep 1
         echo
@@ -56,14 +56,14 @@ while [ $x -le 5 ] ; do
         apt install ./vscode.deb -y
         choice=$(echo $choice | sed 's/\<Vs-code\>//g')
 
-    elif [[ $choice =~ "Vagrant" ]]; then
+    elif [[ $choice =~ "vagrant" ]]; then
         echo "  | vagrant"
         sleep 1
         echo
         apt install vagrant -y
         choice=$(echo $choice | sed 's/\<Vagrant\>//g')
 
-    elif [[ $choice =~ "Docker" ]]; then
+    elif [[ $choice =~ "docker" ]]; then
         echo "  | docker"
         sleep 1
         echo
