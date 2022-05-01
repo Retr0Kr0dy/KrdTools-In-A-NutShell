@@ -84,7 +84,6 @@ while [ $x -le 5 ] ; do
     
     elif [[ $choice =~ "Alias" ]]; then
         echo
-        echo
         printf "${GREEN}adding ALIAS "
         echo
         sleep 1
@@ -107,19 +106,23 @@ while [ $x -le 5 ] ; do
     #TOOLS
 
     elif [[ $choice =~ "Tools" ]]; then
-        echo
-        echo
-        printf "${GREEN}adding TOOLS" 
+        echo 
+        echo 
+        printf "${L_GREEN}adding TOOLS" 
         sleep 1
+        echo 
         echo
-        printf "${L_GREEN}  | Using /bin/..."
+        printf "${GREEN}  | Using /bin/..."
         sleep 1
+        echo 
         echo
         printf "${L_GREEN}Red Wifi"
+        echo
         echo
         sleep 1
         printf "${GREEN}  | Adding WiFuck ...${L_PURPLE}"
         sleep 1
+        echo
         echo
         chmod u+x tools/setup-wifuck.sh
         ./tools/setup-wifuck.sh
