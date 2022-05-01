@@ -22,9 +22,7 @@ choice=$(cat ./choice)
 
 x=1
 while [ $x -le 5 ] ; do
-    echo $choice
-    echo $i
-    
+   
     #DEPS
 
     if [[ $choice =~ "python3" ]]; then
