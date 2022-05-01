@@ -1,5 +1,17 @@
 #!/bin/bash
 
+#COLOR CONSOL
+
+BLUE='\033[0;34m'
+YELOW='\033[1;33m'
+RED='\033[0;34m'
+PURPLE='\033[0;35m'
+L_PURPLE='\033[1;35m'
+GREEN='\033[0;32m'
+L_GREEN='\033[1;32m'
+NC='\033[0m'
+
+
 clear
 echo "Kali In A Nutshell"
 echo
@@ -26,28 +38,28 @@ while [ $x -le 5 ] ; do
     #DEPS
 
     if [[ $choice =~ "python3" ]]; then
-        echo "  | python3"
+        printf "${BLUE}  | python3{NC}"
         sleep 1
         echo
         apt install python3 -y
         choice=$(echo $choice | sed 's/\<python3\>//g')
 
     elif [[ $choice =~ "pip" ]]; then
-        echo "  | pip"
+        printf "${BLUE}  | pip${NC}"
         sleep 1
         echo
         apt install pip -y
         choice=$(echo $choice | sed 's/\<pip\>//g')
 
     elif [[ $choice =~ "netdiscover" ]]; then
-        echo "  | netdiscover"
+        printf "${BLUE}  | netdiscover${NC}"
         sleep 1
         echo
         apt install netdiscover -y
         choice=$(echo $choice | sed 's/\<netdiscover\>//g')
 
     elif [[ $choice =~ "vs-code" ]]; then
-        echo "  | vs-code"
+        printf "${BLUE}  | vs-code${NC}"
         sleep 1
         echo
         curl https://az764295.vo.msecnd.net/stable/dfd34e8260c270da74b5c2d86d61aee4b6d56977/code_1.66.2-1649664567_amd64.deb >> vscode.deb
@@ -55,14 +67,14 @@ while [ $x -le 5 ] ; do
         choice=$(echo $choice | sed 's/\<vs-code\>//g')
 
     elif [[ $choice =~ "vagrant" ]]; then
-        echo "  | vagrant"
+        printf "${BLUE}  | vagrant${NC}"
         sleep 1
         echo
         apt install vagrant -y
         choice=$(echo $choice | sed 's/\<vagrant\>//g')
 
     elif [[ $choice =~ "docker" ]]; then
-        echo "  | docker"
+        printf "${BLUE}  | docker${NC}"
         sleep 1
         echo
         apt install docker -y
@@ -72,43 +84,43 @@ while [ $x -le 5 ] ; do
     
     elif [[ $choice =~ "Alias" ]]; then
         echo
-        echo "adding ALIAS "
+        printf "${GREEN}adding ALIAS "
         echo
         sleep 1
         alias ls='ls --color=auto'
-        echo "ls = ls --color=auto"
+        printf "${L_GREEN}ls = ls --color=auto"
         alias ip='ip --color=auto'
-        echo "ip= ip --color=auto"
+        printf "${L_GREEN}ip= ip --color=auto"
         alias grep='grep --color=auto'
-        echo "grep = grep --color=auto"
+        printf "${L_GREEN}grep = grep --color=auto"
         alias diff='diff --color=auto'
-        echo "diff = diff --color=auto"
+        printf "${L_GREEN}diff = diff --color=auto"
         alias lla='ls -la'
-        echo "lla = ls -la"
+        printf "${L_GREEN}lla = ls -la${NC}"
         choice=$(echo $choice | sed 's/\<Alias\>//g')
 
     #TOOLS
 
     elif [[ $choice =~ "Tools" ]]; then
-        echo " adding TOOLS" 
+        printf "${GREEN} adding TOOLS" 
         sleep 1
-        echo "  | Using /bin/..."
+        printf "${GREEN}  | Using /bin/..."
         sleep 1
         echo "  Red Wifi"
         sleep 1
-        echo "  | Adding WiFuck ..."
+        printf "${GREEN}  | Adding WiFuck ..."
         sleep 1
         echo
         chmod u+x tools/setup-wifuck.sh
         ./tools/setup-wifuck.sh
-        echo "  | Adding WiFuck-rpi ..."
+        printf "${GREEN}  | Adding WiFuck-rpi ..."
         sleep 1
         echo
         chmod u+x tools/setup-wifuck-rpi.sh
         ./tools/setup-wifuck-rpi.sh
-        echo "  Blue tools"
+        printf "${GREEN}  Blue tools"
         sleep 1
-        echo "  | Adding CryptSIS-rebirth ..."
+        printf "${GREEN}  | Adding CryptSIS-rebirth ..."
         sleep 1
         echo
         chmod u+x tools/setup-cryptsis-rebirth.sh
@@ -118,7 +130,7 @@ while [ $x -le 5 ] ; do
     else
         x=$(( $x + 10 ))
         echo
-        echo "  COMPLETED !!!"
+        printf "${PURPLE}  COMPLETED !!!"
 
     fi
 done
