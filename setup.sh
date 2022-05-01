@@ -9,7 +9,7 @@ whiptail --title "KrdTools-In-A-NutShell" --checklist \
 "Select instalation options" 20 78 9 \
 " | DEPS" "checking this has no effect              ." OFF \
 "python3" "Install python3                          ." ON \
-"python3-pip" "Install python3-pip                      ." ON \
+"python-pip" "Install python3-pip                      ." ON \
 "netdiscover" "Install netdiscover                      ." ON \
 "vs-code" "Install Visual Studio Code               ." OFF \
 "vagrant" "Install vagrant                          ." OFF \
@@ -34,11 +34,11 @@ while [ $x -le 5 ] ; do
         apt install python3 -y
         choice=$(echo $choice | sed 's/\<python3\>//g')
 
-    elif [[ $choice =~ "python3-pip" ]]; then
-        echo "  | python3-pip"
+    elif [[ $choice =~ "python-pip" ]]; then
+        echo "  | python-pip"
         sleep 1
         echo
-        apt install python3-pip -y
+        apt install python-pip -y
         choice=$(echo $choice | sed 's/\<python-pip\>//g')
 
     elif [[ $choice =~ "netdiscover" ]]; then
