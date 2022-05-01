@@ -86,6 +86,7 @@ while [ $x -le 5 ] ; do
         echo
         printf "${GREEN}adding ALIAS "
         echo
+        echo
         sleep 1
         alias ls='ls --color=auto'
         printf "${L_GREEN}ls = ls --color=auto"
@@ -108,34 +109,34 @@ while [ $x -le 5 ] ; do
     elif [[ $choice =~ "Tools" ]]; then
         echo 
         echo 
-        printf "${L_GREEN}adding TOOLS" 
+        printf "${GREEN}adding TOOLS" 
         sleep 1
         echo 
         echo
-        printf "${GREEN}  | Using /bin/..."
+        printf "${L_GREEN}  | Using /bin/..."
         sleep 1
         echo 
         echo
-        printf "${L_GREEN}Red Wifi"
+        printf "${GREEN}Red Wifi"
         echo
         echo
         sleep 1
-        printf "${GREEN}  | Adding WiFuck ...${L_PURPLE}"
+        printf "${L_GREEN}  | Adding WiFuck ...${L_PURPLE}"
         sleep 1
         echo
         echo
         chmod u+x tools/setup-wifuck.sh
         ./tools/setup-wifuck.sh
-        printf "${GREEN}  | Adding WiFuck-rpi ...${L_PURPLE}"
+        printf "${L_GREEN}  | Adding WiFuck-rpi ...${L_PURPLE}"
         sleep 1
         echo
         chmod u+x tools/setup-wifuck-rpi.sh
         ./tools/setup-wifuck-rpi.sh
         echo
-        printf "${L_GREEN}  Blue tools"
+        printf "${GREEN}Blue tools"
         echo
         sleep 1
-        printf "${GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
+        printf "${L_GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
         sleep 1
         echo
         chmod u+x tools/setup-cryptsis-rebirth.sh
@@ -145,9 +146,9 @@ while [ $x -le 5 ] ; do
     else
         x=$(( $x + 10 ))
         echo
-        printf "${RED}  COMPLETED !!!"
+        printf "${PURPLE}  COMPLETED !!!"
         echo
-        printf "${RED}  COMPLETED !!!"
+        printf "${L_PURPLE}  COMPLETED !!!"
         echo
         printf "${RED}  COMPLETED !!!"
 
