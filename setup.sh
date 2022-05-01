@@ -39,7 +39,7 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         apt install python3-pip -y
-        choice=$(echo $choice | sed 's/\<python3-pip\>//g')
+        choice=$(echo $choice | sed 's/\<python-pip\>//g')
 
     elif [[ $choice =~ "netdiscover" ]]; then
         echo "  | netdiscover"
