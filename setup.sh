@@ -89,12 +89,16 @@ while [ $x -le 5 ] ; do
         sleep 1
         alias ls='ls --color=auto'
         printf "${L_GREEN}ls = ls --color=auto"
+        echo
         alias ip='ip --color=auto'
         printf "${L_GREEN}ip= ip --color=auto"
+        echo
         alias grep='grep --color=auto'
         printf "${L_GREEN}grep = grep --color=auto"
+        echo
         alias diff='diff --color=auto'
         printf "${L_GREEN}diff = diff --color=auto"
+        echo
         alias lla='ls -la'
         printf "${L_GREEN}lla = ls -la${NC}"
         choice=$(echo $choice | sed 's/\<Alias\>//g')
@@ -105,6 +109,7 @@ while [ $x -le 5 ] ; do
         echo
         printf "${GREEN} adding TOOLS" 
         sleep 1
+        echo
         printf "${L_GREEN}  | Using /bin/..."
         sleep 1
         echo
