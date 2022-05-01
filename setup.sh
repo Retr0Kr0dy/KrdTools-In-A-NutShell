@@ -107,6 +107,7 @@ while [ $x -le 5 ] ; do
         sleep 1
         printf "${L_GREEN}  | Using /bin/..."
         sleep 1
+        echo
         echo "  Red Wifi"
         sleep 1
         printf "${GREEN}  | Adding WiFuck ...${L_PURPLE}"
@@ -119,9 +120,9 @@ while [ $x -le 5 ] ; do
         echo
         chmod u+x tools/setup-wifuck-rpi.sh
         ./tools/setup-wifuck-rpi.sh
-        printf "${GREEN}  Blue tools"
+        printf "${L_GREEN}  Blue tools"
         sleep 1
-        printf "${L_GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
+        printf "${GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
         sleep 1
         echo
         chmod u+x tools/setup-cryptsis-rebirth.sh
