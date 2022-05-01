@@ -107,13 +107,13 @@ while [ $x -le 5 ] ; do
 
     elif [[ $choice =~ "Tools" ]]; then
         echo
-        printf "${GREEN} adding TOOLS" 
+        printf "${GREEN}adding TOOLS" 
         sleep 1
         echo
-        printf "${L_GREEN}  | Using /bin/..."
+        printf "  | Using /bin/..."
         sleep 1
         echo
-        echo "  Red Wifi"
+        echo "${L_GREEN}Red Wifi"
         sleep 1
         printf "${GREEN}  | Adding WiFuck ...${L_PURPLE}"
         sleep 1
