@@ -23,7 +23,7 @@ sleep 1
 whiptail --title "KrdTools-In-A-NutShell" --checklist \
 "Select instalation options" 20 78 9 \
 " | CONTAINER" "checking this has no effect              ." OFF \
-"portainer" " Install portainer and setting it up     ." ON \
+"portainer" " Install portainer and setting it up     ." ON 2>choice
 
 choice=$(cat ./choice)
 
