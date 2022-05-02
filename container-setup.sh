@@ -38,7 +38,7 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         docker pull portainer/portainer
-        mkdir docker_cont && mkdir portainer
+        mkdir docker_cont && mkdir docker_conf/portainer
         echo "version: '3.7'" >>docker_conf/portainer/compose.yml
         echo "services:" >>docker_conf/portainer/compose.yml
         echo "  portainer:" >>docker_conf/portainer/compose.yml
