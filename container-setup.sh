@@ -56,7 +56,7 @@ while [ $x -le 5 ] ; do
         echo '      TZ: "Europe/Paris"' >>docker_conf/portainer/compose.yml
         echo "volumes:" >>docker_conf/portainer/compose.yml
         echo "  dataportainer:" >>docker_conf/portainer/compose.yml
-        docker-compose up -d
+        docker-compose up -f docker_conf/portainer/compose.yml -d
         choice=$(echo $choice | sed 's/\<portainer\>//g')
         
 
