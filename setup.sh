@@ -77,7 +77,8 @@ while [ $x -le 5 ] ; do
         printf "${BLUE}  | docker${NC}"
         sleep 1
         echo
-        apt install docker -y
+        apt install docker.io -y
+        setfacl --modify user:1000:rw /var/run/docker.sock
         choice=$(echo $choice | sed 's/\<docker\>//g')
     
     #ALIAS
@@ -155,3 +156,5 @@ while [ $x -le 5 ] ; do
 
     fi
 done
+
+rm -rf choice 
