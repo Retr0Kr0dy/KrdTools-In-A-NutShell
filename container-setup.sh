@@ -38,9 +38,24 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         docker pull portainer/portainer
-        mkdir docker_cont && cd docker_cont
-        mkdir portainer && cd portainer
-        echo "version: '3.7'\nservices:\n  portainer:\n    image: portainer/portainer\n    restart: unless-stopped\n    command: -H unix:///var/run/docker.sock\n    ports:\n      - 9000:9000\n    volumes:\n      - /etc/localtime:/etc/localtime:ro\n      - /etc/timezone:/etc/timezone:ro\n      - /var/run/docker.sock:/var/run/docker.sock:ro\n      - dataportainer:/data\n    environment:\n      TZ: "Europe/Paris"\nvolumes:\n  dataportainer:" >compose.yml
+        mkdir docker_cont && mkdir portainer
+        echo "version: '3.7'" >>docker_conf/portainer/compose.yml
+        echo "services:" >>docker_conf/portainer/compose.yml
+        echo "  portainer:" >>docker_conf/portainer/compose.yml
+        echo "    image: portainer/portainer" >>docker_conf/portainer/compose.yml
+        echo "    restart: unless-stopped" >>docker_conf/portainer/compose.yml
+        echo "    command: -H unix:///var/run/docker.sock" >>docker_conf/portainer/compose.yml
+        echo "    ports:" >>docker_conf/portainer/compose.yml
+        echo "      - 9000:9000" >>docker_conf/portainer/compose.yml
+        echo "    volumes:" >>docker_conf/portainer/compose.yml
+        echo "      - /etc/localtime:/etc/localtime:ro" >>docker_conf/portainer/compose.yml
+        echo "      - /etc/timezone:/etc/timezone:ro" >>docker_conf/portainer/compose.yml
+        echo "      - /var/run/docker.sock:/var/run/docker.sock:ro" >>docker_conf/portainer/compose.yml
+        echo "      - dataportainer:/data" >>docker_conf/portainer/compose.yml 
+        echo "    environment:" >>docker_conf/portainer/compose.yml
+        echo '      TZ: "Europe/Paris"' >>docker_conf/portainer/compose.yml
+        echo "volumes:" >>docker_conf/portainer/compose.yml
+        echo "  dataportainer:" >>docker_conf/portainer/compose.yml
         docker-compose up -d
         choice=$(echo $choice | sed 's/\<portainer\>//g')
         
