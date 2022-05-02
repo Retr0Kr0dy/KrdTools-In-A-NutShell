@@ -19,7 +19,7 @@ echo
 sleep 1
 
 whiptail --title "KrdTools-In-A-NutShell" --checklist \
-"Select instalation options" 20 78 9 \
+"Select instalation options" 20 78 10 \
 " | DEPS" "checking this has no effect              ." OFF \
 " python3" "Install python3                          ." ON \
 " pip" "Install python3-pip                      ." ON \
