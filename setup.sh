@@ -13,6 +13,7 @@ NC='\033[0m'
 
 
 clear
+echo
 echo "Kali In A Nutshell"
 echo
 sleep 1
@@ -27,8 +28,6 @@ whiptail --title "KrdTools-In-A-NutShell" --checklist \
 " vagrant" "Install vagrant                          ." OFF \
 " docker" "Install docker                           ." OFF \
 " compose" "Install docker-compose                   ." OFF \
-"  | CONTAINER" "checking this has no effect              ." OFF \
-"  portainer" " Install portainer and setting it up     ." ON \
 "Alias" "Add basic alias                          ." ON \
 "Tools" "Add basic tools                          ." ON 2>choice
 
@@ -156,19 +155,6 @@ while [ $x -le 5 ] ; do
         choice=$(echo $choice | sed 's/\<Tools\>//g')
         
         
-    #CONTAINER
-
-    elif [[ $choice =~ "portainer" ]]; then
-        printf "${BLUE}  | portainer${NC}"
-        sleep 1
-        echo
-        docker pull portainer/portainer
-        mkdir docker_cont && cd docker_cont
-        mkdir portainer && cd portainer
-        echo "version: '3.7'\nservices:\n  portainer:\n    image: portainer/portainer\n    restart: unless-stopped\n    command: -H unix:///var/run/docker.sock\n    ports:\n      - 9000:9000\n    volumes:\n      - /etc/localtime:/etc/localtime:ro\n      - /etc/timezone:/etc/timezone:ro\n      - /var/run/docker.sock:/var/run/docker.sock:ro\n      - dataportainer:/data\n    environment:\n      TZ: "Europe/Paris"\nvolumes:\n  dataportainer:" >compose.yml
-        docker-compose up -d
-        choice=$(echo $choice | sed 's/\<portainer\>//g')
-    
 
     else
         x=$(( $x + 10 ))
