@@ -41,8 +41,9 @@ while [ $x -le 5 ] ; do
         mkdir docker_conf && mkdir docker_conf/portainer
         echo "version: '3.7'" >>docker_conf/portainer/compose.yml
         echo "services:" >>docker_conf/portainer/compose.yml
-        echo "  portainer:" >>docker_conf/portainer/compose.yml
+        echo "  app:" >>docker_conf/portainer/compose.yml
         echo "    image: portainer/portainer" >>docker_conf/portainer/compose.yml
+        echo "    container_name: portainer" >>docker_conf/portainer/compose.yml
         echo "    restart: unless-stopped" >>docker_conf/portainer/compose.yml
         echo "    command: -H unix:///var/run/docker.sock" >>docker_conf/portainer/compose.yml
         echo "    ports:" >>docker_conf/portainer/compose.yml
