@@ -29,8 +29,8 @@ whiptail --title "KrdTools-In-A-NutShell" --checklist \
 choice=$(cat ./choice)
 
 mkdir docker_conf
-
 x=1
+
 while [ $x -le 5 ] ; do
    
     #CONTAINER
@@ -77,7 +77,7 @@ while [ $x -le 5 ] ; do
         echo "    restart: unless-stopped" >>docker_conf/minecraft-server/compose.yml
         echo "    tty: true" >>docker_conf/minecraft-server/compose.yml
         echo "    stdin_open: true" >>docker_conf/minecraft-server/compose.yml
-        echo "    environement:" >>docker_conf/minecraft-server/compose.yml
+        echo "    environment:" >>docker_conf/minecraft-server/compose.yml
         echo '      EULA: "TRUE"' >>docker_conf/minecraft-server/compose.yml
         echo "    ports:" >>docker_conf/minecraft-server/compose.yml
         echo "      - 25565:25565" >>docker_conf/minecraft-server/compose.yml
