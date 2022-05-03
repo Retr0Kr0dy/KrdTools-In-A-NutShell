@@ -23,10 +23,12 @@ sleep 1
 whiptail --title "KrdTools-In-A-NutShell" --checklist \
 "Select instalation options" 20 78 9 \
 " | CONTAINER" "checking this has no effect              ." OFF \
-"portainer" " Install portainer and setting it up     ." ON 2>choice
+"portainer" " Install portainer and setting it up     ." ON \
+"minecraft-server" " Install minecraft-server and setting it up   ." ON 2>choice
 
 choice=$(cat ./choice)
 
+mkdir docker_conf
 
 x=1
 while [ $x -le 5 ] ; do
@@ -38,7 +40,7 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         docker pull portainer/portainer
-        mkdir docker_conf && mkdir docker_conf/portainer
+        mkdir docker_conf/portainer
         echo "version: '3.7'" >>docker_conf/portainer/compose.yml
         echo "services:" >>docker_conf/portainer/compose.yml
         echo "  app:" >>docker_conf/portainer/compose.yml
@@ -59,7 +61,31 @@ while [ $x -le 5 ] ; do
         echo "  dataportainer:" >>docker_conf/portainer/compose.yml
         docker-compose -f docker_conf/portainer/compose.yml up -d
         choice=$(echo $choice | sed 's/\<portainer\>//g')
-        
+
+
+    elif [[ $choice =~ "minecraft-server" ]]; then
+        printf "${BLUE}  | minecraft-server${NC}"
+        sleep 1
+        echo
+        docker pull itzg/minecraft-server
+        mkdir docker_conf/minecraft-server
+        echo "version: '3.7'" >>docker_conf/minecraft-server/compose.yml
+        echo "services:" >>docker_conf/minecraft-server/compose.yml
+        echo "  app:" >>docker_conf/minecraft-server/compose.yml
+        echo "    image: itzg/minecraft-server" >>docker_conf/minecraft-server/compose.yml
+        echo "    container_name: minecraft-server" >>docker_conf/minecraft-server/compose.yml
+        echo "    restart: unless-stopped" >>docker_conf/minecraft-server/compose.yml
+        echo "    tty: true" >>docker_conf/minecraft-server/compose.yml
+        echo "    stdin_open: true" >>docker_conf/minecraft-server/compose.yml
+        echo "    environement:" >>docker_conf/minecraft-server/compose.yml
+        echo '      EULA: "TRUE"' >>docker_conf/minecraft-server/compose.yml
+        echo "    ports:" >>docker_conf/minecraft-server/compose.yml
+        echo "      - 25565:25565" >>docker_conf/minecraft-server/compose.yml
+        echo "    volumes:" >>docker_conf/minecraft-server/compose.yml
+        echo "      - ./minecraft-dat:/data" >>docker_conf/minecraft-server/compose.yml
+        docker-compose -f docker_conf/minecraft-server/compose.yml up -d
+        choice=$(echo $choice | sed 's/\<minecraft-server\>//g')
+
 
     else
         x=$(( $x + 10 ))
