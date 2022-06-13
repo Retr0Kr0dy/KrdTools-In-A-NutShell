@@ -19,15 +19,17 @@ echo
 sleep 1
 
 whiptail --title "KrdTools-In-A-NutShell" --checklist \
-"Select instalation options" 20 78 10 \
-" | DEPS" "checking this has no effect              ." OFF \
-" python3" "Install python3                          ." ON \
-" pip" "Install python3-pip                      ." ON \
-" netdiscover" "Install netdiscover                      ." ON \
-" vs-code" "Install Visual Studio Code               ." OFF \
-" vagrant" "Install vagrant                          ." OFF \
-" docker" "Install docker                           ." OFF \
-" compose" "Install docker-compose                   ." OFF \
+"Select instalation options" 20 78 13 \
+" | DEPS" "checking this has no effect              ." ON \
+" ¬python3" "Install python3                          ." ON \
+" ¬pip" "Install python3-pip                      ." ON \
+" ¬netdiscover" "Install netdiscover                      ." ON \
+" ¬vs-code" "Install Visual Studio Code               ." OFF \
+" ¬vagrant" "Install vagrant                          ." OFF \
+" ¬docker" "Install docker                           ." OFF \
+" ¬compose" "Install docker-compose                   ." OFF \
+" | DRIVER" "checking this has no effect              ." ON \
+" ¬rtl8812au" "Install RTL8812AU driver for Alfa        ." OFF \
 "Alias" "Add basic alias                          ." ON \
 "Tools" "Add basic tools                          ." ON 2>choice
 
@@ -153,7 +155,17 @@ while [ $x -le 5 ] ; do
         chmod u+x tools/setup-cryptsis-rebirth.sh
         ./tools/setup-cryptsis-rebirth.sh
         choice=$(echo $choice | sed 's/\<Tools\>//g')
-        
+
+    # DRIVER
+
+    elif [[ $choice =~ "rtl8812au" ]]; then
+        printf "${BLUE}  | rtl8812au${NC}"
+        sleep 1
+        echo
+        apt install dkms git -y
+        git clone https://github.com/aircrack-ng/rtl8812au
+        cd rtl8812au && make && make install
+        choice=$(echo $choice | sed 's/\<rtl8812au\>//g')
         
 
     else
