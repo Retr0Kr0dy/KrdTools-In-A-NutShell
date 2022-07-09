@@ -10,7 +10,6 @@ clone this repo, make the setup.sh file executable, execute it.
 ```
 git clone https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell
 cd KrdTools-In-A-NutShell
-chmod +x setup.sh
 sudo ./setup.sh
 ```
 
