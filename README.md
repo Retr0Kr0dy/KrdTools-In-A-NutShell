@@ -12,14 +12,14 @@ cd KrdTools-In-A-NutShell
 sudo ./setup.sh
 ```
 This script can install usefull packages (such as vscode, docker, etc...), install drivers (like rtl8812au for Alfa antenna), add some beautiful alias (ls --color for non beatufied version of debian) and can install usefull tools (Crypt_SIS for encryption, wifuck for ez wifi deauth,etc...).
-[See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell/edit/main/README.md#content-for-setupsh)
+[See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell/main/README.md#content-for-setupsh)
 ### Container-setup.sh
 Normally, for this script, you should alreday have properly install Docker.io and Docker-compose, both are needed.
 ```
 ./container-setup.sh
 ```
 This script simplifie usage of docker by puling image, setting it up, and create it for you.
-[See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell/edit/main/README.md#content-for-containersetupsh)
+[See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell/main/README.md#content-for-containersetupsh)
 # Content for Setup.sh
 ### DEPS
 Different usefull packages
