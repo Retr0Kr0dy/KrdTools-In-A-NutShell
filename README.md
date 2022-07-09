@@ -59,6 +59,6 @@ Usefull tools, installed in `/usr/local/bin/`
 ### Container
 | Name | Description |
 |-----------|--------------------------------------|
-| [*portainer*](https://www.portainer.io/) | Portianer is an Web interface for container management. |
-| [*minecraft-servrer*](https://hub.docker.com/r/itzg/minecraft-server) | Setting up a minecraft server.|
-| [*emulatorjs*](https://github.com/linuxserver/docker-emulatorjs) | Web js retro gaming emulator (Not Implemented Yet) |
+| [*portainer*](https://www.portainer.io/) | *Portianer is an Web interface for container management.* |
+| [*minecraft-servrer*](https://hub.docker.com/r/itzg/minecraft-server) | *Setting up a minecraft server.* |
+| [*emulatorjs*](https://github.com/linuxserver/docker-emulatorjs) | *Web js retro gaming emulator (Not Implemented Yet)* |
