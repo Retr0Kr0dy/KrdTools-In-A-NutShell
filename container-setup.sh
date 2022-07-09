@@ -12,7 +12,6 @@ L_GREEN='\033[1;32m'
 NC='\033[0m'
 
 
-
 clear
 echo
 echo "Container In A Nutshell"
@@ -51,6 +50,14 @@ while [ $x -le 5 ] ; do
         docker pull itzg/minecraft-server
         docker-compose -f docker_conf/minecraft-server/compose.yml up -d
         choice=$(echo $choice | sed 's/\<minecraft-server\>//g')
+
+    elif [[ $choice =~ "emulatorjs" ]]; then
+        printf "${BLUE}  | emulatorjs${NC}"
+        sleep 1
+        echo
+        docker pull lscr.io/linuxserver/emulatorjs:latest
+        docker-compose -f docker_conf/emulatorjs/compose.yml up -d
+        choice=$(echo $choice | sed 's/\<emulatorjs\>//g')
 
 
     else
