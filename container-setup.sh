@@ -40,25 +40,6 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         docker pull portainer/portainer
-        mkdir docker_conf/portainer
-        echo "version: '3.7'" >>docker_conf/portainer/compose.yml
-        echo "services:" >>docker_conf/portainer/compose.yml
-        echo "  app:" >>docker_conf/portainer/compose.yml
-        echo "    image: portainer/portainer" >>docker_conf/portainer/compose.yml
-        echo "    container_name: portainer" >>docker_conf/portainer/compose.yml
-        echo "    restart: unless-stopped" >>docker_conf/portainer/compose.yml
-        echo "    command: -H unix:///var/run/docker.sock" >>docker_conf/portainer/compose.yml
-        echo "    ports:" >>docker_conf/portainer/compose.yml
-        echo "      - 9000:9000" >>docker_conf/portainer/compose.yml
-        echo "    volumes:" >>docker_conf/portainer/compose.yml
-        echo "      - /etc/localtime:/etc/localtime:ro" >>docker_conf/portainer/compose.yml
-        echo "      - /etc/timezone:/etc/timezone:ro" >>docker_conf/portainer/compose.yml
-        echo "      - /var/run/docker.sock:/var/run/docker.sock:ro" >>docker_conf/portainer/compose.yml
-        echo "      - dataportainer:/data" >>docker_conf/portainer/compose.yml 
-        echo "    environment:" >>docker_conf/portainer/compose.yml
-        echo '      TZ: "Europe/Paris"' >>docker_conf/portainer/compose.yml
-        echo "volumes:" >>docker_conf/portainer/compose.yml
-        echo "  dataportainer:" >>docker_conf/portainer/compose.yml
         docker-compose -f docker_conf/portainer/compose.yml up -d
         choice=$(echo $choice | sed 's/\<portainer\>//g')
 
@@ -68,21 +49,6 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         docker pull itzg/minecraft-server
-        mkdir docker_conf/minecraft-server
-        echo "version: '3.7'" >>docker_conf/minecraft-server/compose.yml
-        echo "services:" >>docker_conf/minecraft-server/compose.yml
-        echo "  app:" >>docker_conf/minecraft-server/compose.yml
-        echo "    image: itzg/minecraft-server" >>docker_conf/minecraft-server/compose.yml
-        echo "    container_name: minecraft-server" >>docker_conf/minecraft-server/compose.yml
-        echo "    restart: unless-stopped" >>docker_conf/minecraft-server/compose.yml
-        echo "    tty: true" >>docker_conf/minecraft-server/compose.yml
-        echo "    stdin_open: true" >>docker_conf/minecraft-server/compose.yml
-        echo "    environment:" >>docker_conf/minecraft-server/compose.yml
-        echo '      EULA: "TRUE"' >>docker_conf/minecraft-server/compose.yml
-        echo "    ports:" >>docker_conf/minecraft-server/compose.yml
-        echo "      - 25565:25565" >>docker_conf/minecraft-server/compose.yml
-        echo "    volumes:" >>docker_conf/minecraft-server/compose.yml
-        echo "      - ./minecraft-dat:/data" >>docker_conf/minecraft-server/compose.yml
         docker-compose -f docker_conf/minecraft-server/compose.yml up -d
         choice=$(echo $choice | sed 's/\<minecraft-server\>//g')
 
