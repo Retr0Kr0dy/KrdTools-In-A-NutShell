@@ -1,6 +1,6 @@
 version: '3.7'
-    services:
-        portainer:
+services:
+    portainer:
         image: portainer/portainer
         container_name: portainer
         restart: unless-stopped
@@ -14,5 +14,5 @@ version: '3.7'
             - dataportainer:/data 
         environment:
             TZ: "Europe/Paris"
-    volumes:
-        dataportainer:
+volumes:
+    dataportainer:
