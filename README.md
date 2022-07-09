@@ -19,7 +19,7 @@ Normally, for this script, you should alreday have properly install Docker.io an
 ./container-setup.sh
 ```
 This script simplifie usage of docker by puling image, setting it up, and create it for you.
-[See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell#content-for-containersetupsh)
+[See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell#content-for-container-setupsh)
 # Content for Setup.sh
 ### DEPS
 Different usefull packages
