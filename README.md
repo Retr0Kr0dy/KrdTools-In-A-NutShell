@@ -57,8 +57,8 @@ Usefull tools, installed in `/usr/local/bin/`
 | [*WiFuck-rpi*](https://github.com/Retr0Kr0dy/wifuck) | *Same but for Raspberry pi* |
 # Content for container-setup.sh
 ### Container
-| Name | Description |
-|-----------|--------------------------------------|
-| [*portainer*](https://www.portainer.io/) | *Portianer is an Web interface for container management.* |
-| [*minecraft-servrer*](https://hub.docker.com/r/itzg/minecraft-server) | *Setting up a minecraft server.* |
-| [*emulatorjs*](https://github.com/linuxserver/docker-emulatorjs) | *Web js retro gaming emulator (Not Implemented Yet)* |
+| Name | Description | Usefull ports |
+|-----------|--------------------------------------|------------|
+| [*portainer*](https://www.portainer.io/) | *Portianer is an Web interface for container management.* | 9000 |
+| [*minecraft-servrer*](https://hub.docker.com/r/itzg/minecraft-server) | *Setting up a minecraft server.* | 25565 |
+| [*emulatorjs*](https://github.com/linuxserver/docker-emulatorjs) | *Web js retro gaming emulator (Not Implemented Yet)* | 80 ; 3000 |
