@@ -28,7 +28,6 @@ whiptail --title "KrdTools-In-A-NutShell" --checklist \
 
 choice=$(cat ./choice)
 
-mkdir docker_conf
 x=1
 
 while [ $x -le 5 ] ; do
