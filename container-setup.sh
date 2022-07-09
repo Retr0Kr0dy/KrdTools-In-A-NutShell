@@ -21,9 +21,10 @@ sleep 1
 
 whiptail --title "KrdTools-In-A-NutShell" --checklist \
 "Select instalation options" 20 78 9 \
-" | CONTAINER" "checking this has no effect              ." OFF \
-"portainer" " Install portainer and setting it up     ." ON \
-"minecraft-server" " Install minecraft-server and setting it up   ." ON 2>choice
+" | CONTAINER" "checking this has no effect " OFF \
+"portainer" " WebUI for container management " ON \
+"minecraft-server" " Minecraft-server " ON \
+"emulatorjs" " Web retro gaming station " ON 2>choice
 
 choice=$(cat ./choice)
 
@@ -58,7 +59,6 @@ while [ $x -le 5 ] ; do
         docker pull lscr.io/linuxserver/emulatorjs:latest
         docker-compose -f docker_conf/emulatorjs/compose.yml up -d
         choice=$(echo $choice | sed 's/\<emulatorjs\>//g')
-
 
     else
         x=$(( $x + 10 ))
