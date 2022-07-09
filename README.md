@@ -14,11 +14,11 @@ sudo ./setup.sh
 This script can install usefull packages (such as vscode, docker, etc...), install drivers (like rtl8812au for Alfa antenna), add some beautiful alias (ls --color for non beatufied version of debian) and can install usefull tools (Crypt_SIS for encryption, wifuck for ez wifi deauth,etc...).
 [See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell#content-for-setupsh)
 ### Container-setup.sh
-Normally, for this script, you should alreday have properly install Docker.io and Docker-compose, both are needed.
+Normally, for this script, you should already have properly install Docker.io and Docker-compose, both are needed.
 ```
 ./container-setup.sh
 ```
-This script simplifie usage of docker by puling image, setting it up, and create it for you.
+This script simplifie usage of docker by pulling image, setting it up, and create container for you.
 [See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell#content-for-container-setupsh)
 # Content for Setup.sh
 ### DEPS
@@ -59,6 +59,6 @@ Usefull tools, installed in `/usr/local/bin/`
 ### Container
 | Name | Description |
 |-----------|--------------------------------------|
-| portainer | Portianer is an Web interface for container management. |
-| minecraft-servrer | Setting up a minecraft server.|
-| emulatorjs | Web js retro gaming emulator (Not Implemented Yet) |
+| [portainer](https://www.portainer.io/) | Portianer is an Web interface for container management. |
+| [minecraft-servrer](https://hub.docker.com/r/itzg/minecraft-server) | Setting up a minecraft server.|
+| [emulatorjs](https://github.com/linuxserver/docker-emulatorjs) | Web js retro gaming emulator (Not Implemented Yet) |
