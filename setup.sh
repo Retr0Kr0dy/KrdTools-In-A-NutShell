@@ -137,12 +137,10 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         echo
-        chmod u+x tools/setup-wifuck.sh
         ./tools/setup-wifuck.sh
         printf "${L_GREEN}  | Adding WiFuck-rpi ...${L_PURPLE}"
         sleep 1
         echo
-        chmod u+x tools/setup-wifuck-rpi.sh
         ./tools/setup-wifuck-rpi.sh
         echo
         printf "${GREEN}Blue tools"
@@ -152,7 +150,6 @@ while [ $x -le 5 ] ; do
         printf "${L_GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
         sleep 1
         echo
-        chmod u+x tools/setup-cryptsis-rebirth.sh
         ./tools/setup-cryptsis-rebirth.sh
         choice=$(echo $choice | sed 's/\<Tools\>//g')
 
