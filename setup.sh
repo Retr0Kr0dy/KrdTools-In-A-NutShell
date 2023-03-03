@@ -14,12 +14,13 @@ NC='\033[0m'
 
 clear
 echo
-echo "Kali In A Nutshell"
+echo "any debian shit In A Nutshell"
 echo
 sleep 1
 
 whiptail --title "KrdTools-In-A-NutShell" --checklist \
 "Select instalation options" 20 78 13 \
+" ¬ohmyzsh" "Install and configure oh-my-zsh         ." ON \
 " | DEPS" "checking this has no effect              ." ON \
 " ¬python3" "Install python3                          ." ON \
 " ¬pip" "Install python3-pip                      ." ON \
@@ -38,28 +39,41 @@ choice=$(cat ./choice)
 
 x=1
 while [ $x -le 5 ] ; do
-   
+
+    if [[ $choice =~ "ohmyzsh" ]]; then
+        printf "${BLUE}  | ohmyzsh${NC}"
+        sleep 1
+        echo
+        sudo apt install zsh -y
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.ohmyzsh/plugins/zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.ohmyzsh/plugins/zsh-syntax-highlighting
+        source ~/.ohmyzsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+        source ~/.ohmyzsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        cp ./config/zsh.config ~/.zshrc
+        choice=$(echo $choice | sed 's/\<ohmyzsh\>//g')
+
     #DEPS
 
-    if [[ $choice =~ "python3" ]]; then
+    elif [[ $choice =~ "python3" ]]; then
         printf "${BLUE}  | python3${NC}"
         sleep 1
         echo
-        apt install python3 -y
+        sudo apt install python3 -y
         choice=$(echo $choice | sed 's/\<python3\>//g')
 
     elif [[ $choice =~ "pip" ]]; then
         printf "${BLUE}  | pip${NC}"
         sleep 1
         echo
-        apt install pip -y
+        sudo apt install pip -y
         choice=$(echo $choice | sed 's/\<pip\>//g')
 
     elif [[ $choice =~ "netdiscover" ]]; then
         printf "${BLUE}  | netdiscover${NC}"
         sleep 1
         echo
-        apt install netdiscover -y
+        sudo apt install netdiscover -y
         choice=$(echo $choice | sed 's/\<netdiscover\>//g')
 
     elif [[ $choice =~ "vs-code" ]]; then
@@ -67,29 +81,29 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         curl https://az764295.vo.msecnd.net/stable/dfd34e8260c270da74b5c2d86d61aee4b6d56977/code_1.66.2-1649664567_amd64.deb >> vscode.deb
-        apt install ./vscode.deb -y
+        sudo apt install ./vscode.deb -y
         choice=$(echo $choice | sed 's/\<vs-code\>//g')
 
     elif [[ $choice =~ "vagrant" ]]; then
         printf "${BLUE}  | vagrant${NC}"
         sleep 1
         echo
-        apt install vagrant -y
+        sudo apt install vagrant -y
         choice=$(echo $choice | sed 's/\<vagrant\>//g')
 
     elif [[ $choice =~ "docker" ]]; then
         printf "${BLUE}  | docker${NC}"
         sleep 1
         echo
-        apt install docker.io -y
-        setfacl --modify user:1000:rw /var/run/docker.sock
+        sudo apt install docker.io -y
+        sudo setfacl --modify user:1000:rw /var/run/docker.sock
         choice=$(echo $choice | sed 's/\<docker\>//g')
     
     elif [[ $choice =~ "compose" ]]; then
         printf "${BLUE}  | docker-compose${NC}"
         sleep 1
         echo
-        apt install docker-compose -y
+        sudo apt install docker-compose -y
         choice=$(echo $choice | sed 's/\<compose\>//g')
         
     #ALIAS
@@ -137,11 +151,11 @@ while [ $x -le 5 ] ; do
         sleep 1
         echo
         echo
-        ./tools/setup-wifuck.sh
+        sudo ./tools/setup-wifuck.sh
         printf "${L_GREEN}  | Adding WiFuck-rpi ...${L_PURPLE}"
         sleep 1
         echo
-        ./tools/setup-wifuck-rpi.sh
+        sudo ./tools/setup-wifuck-rpi.sh
         echo
         printf "${GREEN}Blue tools"
         echo
@@ -150,7 +164,7 @@ while [ $x -le 5 ] ; do
         printf "${L_GREEN}  | Adding CryptSIS-rebirth ...${L_PURPLE}"
         sleep 1
         echo
-        ./tools/setup-cryptsis-rebirth.sh
+        sudo ./tools/setup-cryptsis-rebirth.sh
         choice=$(echo $choice | sed 's/\<Tools\>//g')
 
     # DRIVER
@@ -173,7 +187,7 @@ while [ $x -le 5 ] ; do
         printf "${L_PURPLE}  COMPLETED !!!"
         echo
         printf "${RED}  COMPLETED !!!"
-
+        echo
     fi
 done
 

@@ -6,16 +6,16 @@ A life Simplifier for Debian based distrib.
 # Usage
 ### Setup.sh 
 clone this repo, execute setup.sh (as sudo in most case).
-```
+```sh
 git clone https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell
 cd KrdTools-In-A-NutShell
-sudo ./setup.sh
+./setup.sh # no sudo
 ```
 This script can install usefull packages (such as vscode, docker, etc...), install drivers (like rtl8812au for Alfa antenna), add some beautiful alias (ls --color for non beatufied version of debian) and can install usefull tools (Crypt_SIS for encryption, wifuck for ez wifi deauth,etc...).
 [See content](https://github.com/Retr0Kr0dy/KrdTools-In-A-NutShell#content-for-setupsh)
 ### Container-setup.sh
 Normally, for this script, you should already have properly install Docker.io and Docker-compose, both are needed.
-```
+```sh
 ./container-setup.sh
 ```
 This script simplifie usage of docker by pulling image, setting it up, and create container for you.
@@ -25,6 +25,7 @@ This script simplifie usage of docker by pulling image, setting it up, and creat
 Different usefull packages
 | Name | Description |
 |-----------|-----------|
+| [*ohmyzsh*](https://ohmyz.sh/#install) | *enchanced terminal* |
 | [*python3*](https://www.python.org/) | *For script* |
 | [*pip*](https://pypi.org/project/pip/) | *For installing python lib* |
 | [*vs-code*](https://code.visualstudio.com/) | *Graphical IDE* |
@@ -47,6 +48,8 @@ Driver that should be installed
 `diff='diff --color=auto'`
 
 `lla='ls -la'`
+
+and some more in oh-my-zsh config
 
 ### Tools
 Usefull tools, installed in `/usr/local/bin/`
