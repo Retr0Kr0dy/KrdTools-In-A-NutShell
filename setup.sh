@@ -46,10 +46,10 @@ while [ $x -le 5 ] ; do
         echo
         sudo apt install zsh -y
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.ohmyzsh/plugins/zsh-autosuggestions
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.ohmyzsh/plugins/zsh-syntax-highlighting
-        source ~/.ohmyzsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-        source ~/.ohmyzsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+        source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+        source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
         cp ./config/zsh.config ~/.zshrc
         choice=$(echo $choice | sed 's/\<ohmyzsh\>//g')
 
